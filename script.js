@@ -12,7 +12,7 @@ const colours = {
     Flying: "purple",
     Ghost: "purple",
     Grass: "green",
-    Ground: "yellow",
+    Ground: "gold",
     Ice: "lightblue",
     Normal: "beige",
     Poison: "purple",

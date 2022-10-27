@@ -117,6 +117,11 @@ ul li{
     justify-content: center;
 }
 
+#your-team {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
     border-radius: 10px;
 }
@@ -131,11 +136,15 @@ ul li{
 }
 
 .info span {
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
     border-radius: 10px;
 }
 
 .yellow {
     background-color: yellow;
+}
+
+.lightblue {
+    background-color: lightblue;
 }
