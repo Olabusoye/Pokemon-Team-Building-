@@ -41,9 +41,9 @@ async function getData(input) {
 }
 
 /**
- * @param {string} str
+ * @param {string} input
  * @returns {string}
  */
-function upperFirstChar(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+function upperFirstChar(input) {
+    return input.charAt(0).toUpperCase() + input.slice(1);
 }
