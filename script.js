@@ -51,6 +51,7 @@ function upperFirstChar(input) {
 const form = document.getElementById("search-form");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const searchBox = document.getElementById("search");
     const formData = new FormData(form);
     const search = formData.get("search");
 
@@ -59,30 +60,34 @@ form.addEventListener("submit", async (e) => {
 
     const cards = document.getElementById("slots");
     const card = [...cards.children].find(card => card.classList.contains("empty"));
-    card.innerHTML = "";
+    if (card) {
+        card.innerHTML = "";
 
-    const name = document.createElement("h2");
-    name.classList.add("name");
-    name.innerText = data.name;
+        const name = document.createElement("h2");
+        name.classList.add("name");
+        name.innerText = data.name;
 
-    const imageContainer = document.createElement("div");
-    imageContainer.classList.add("image");
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("image");
 
-    const image = document.createElement("img");
-    image.src = data.image;
-    imageContainer.append(image);
+        const image = document.createElement("img");
+        image.src = data.image;
+        imageContainer.append(image);
 
-    const infoContainer = document.createElement("info");
-    infoContainer.classList.add("info");
-    const typeElements = [];
-    data.types.forEach(type => {
-        const span = document.createElement("span");
-        span.classList.add(colours[type]);
-        span.innerText = type;
-        typeElements.push(span);
-    });
-    typeElements.forEach(typeElement => infoContainer.append(typeElement));
+        const infoContainer = document.createElement("info");
+        infoContainer.classList.add("info");
+        const typeElements = [];
+        data.types.forEach(type => {
+            const span = document.createElement("span");
+            span.classList.add(colours[type]);
+            span.innerText = type;
+            typeElements.push(span);
+        });
+        typeElements.forEach(typeElement => infoContainer.append(typeElement));
 
-    card.append(name, imageContainer, infoContainer);
-    card.classList.remove("empty");
+        card.append(name, imageContainer, infoContainer);
+        card.classList.remove("empty");
+
+        searchBox.value = "";
+    }
 });

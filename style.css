@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Pokemon Solid', sans-serif;
     text-align: center;
     background-color: #ffcb05 ;
 }
@@ -23,7 +23,7 @@ header h1 {
     position: relative;
     top: 18px;
     left: 10px;
-    color: black;
+    color: #3c5aa6;
     
 }
 
@@ -38,10 +38,6 @@ header p {
     border: 1px solid black;
     padding: 1.50em 1em 1em;
     border-radius: 25px;
-    position: relative;
-    vertical-align: middle;
-    margin-left: 130px;
-    margin-top: -12px;
     width: 580px;
     height: 520px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -65,11 +61,17 @@ section h1 {
     z-index: 1;
 }
 
+#search-container {
+    display: flex;
+    justify-content: center;
+}
+
 .search {
+    font-family: 'Pokemon Solid', sans-serif;
     background-color: #3c5aa6;
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 input {
@@ -93,7 +95,7 @@ ul li{
 
     width: 160px;
     height: 240px;
-    background-color: green;
+    background-color: rgb(246, 246, 163);
     margin-top: 15px;
     margin-left: 25px;
     list-style: none;
@@ -112,14 +114,10 @@ ul li{
     height: auto;
 }
 
-#pokemon-list {
+#team {
     display: flex;
     justify-content: center;
-}
-
-#your-team {
-    display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -141,10 +139,40 @@ ul li{
     border-radius: 10px;
 }
 
+header img{
+    
+}
+
 .yellow {
     background-color: yellow;
 }
-
 .lightblue {
     background-color: lightblue;
+}
+.blue {
+    background-color: blue;
+}
+.purple {
+    background-color: purple;
+}
+.brown {
+    background-color: brown;
+}
+.pink {
+    background-color: pink;
+}
+.orange {
+    background-color: orange;
+}
+.green {
+    background-color: green;
+}
+.gold {
+    background-color: gold;
+}
+.beige{
+    background-color: white;
+}
+.grey {
+    background-color: grey;
 }
