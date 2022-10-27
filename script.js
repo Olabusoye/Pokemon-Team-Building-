@@ -1,4 +1,29 @@
 /**
+ * @type {{string}}
+ */
+const colours = {
+    Bug: "yellow",
+    Dark: "brown",
+    Dragon: "purple",
+    Electric: "yellow",
+    Fairy: "pink",
+    Fighting: "brown",
+    Fire: "orange",
+    Flying: "purple",
+    Ghost: "purple",
+    Grass: "green",
+    Ground: "yellow",
+    Ice: "lightblue",
+    Normal: "beige",
+    Poison: "purple",
+    Psychic: "pink",
+    Rock: "brown",
+    Shadow: "purple",
+    Steel: "grey",
+    Water: "lightblue"
+}
+
+/**
  * @param {string} input
  * @returns {Promise<{name: string, image: string, types: string[]}>}
  */
