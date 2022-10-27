@@ -1,3 +1,7 @@
+/**
+ * @param {string} input
+ * @returns {Promise<{image: string, types: string[], name: string}>}
+ */
 async function getData(input) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
     const data = await response.json();
@@ -11,6 +15,10 @@ async function getData(input) {
     }
 }
 
+/**
+ * @param {string} str
+ * @returns {string}
+ */
 function upperFirstChar(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
