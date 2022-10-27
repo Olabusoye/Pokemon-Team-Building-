@@ -1,6 +1,6 @@
 /**
  * @param {string} input
- * @returns {Promise<{image: string, types: string[], name: string}>}
+ * @returns {Promise<{name: string, image: string, types: string[]}>}
  */
 async function getData(input) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
