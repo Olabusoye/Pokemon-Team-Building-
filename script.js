@@ -11,11 +11,11 @@ async function getData(input) {
     const data = await response.json().catch(err => console.log("Could not get JSON."));
 
     const types = [];
-    data.types.forEach(type => types.push(upperFirstChar(type.type.name)));
+    data.types.forEach(type => types.push(upperFirstChar(type.type.name))); // ["Electric", "Flying"]
     return {
-        name: upperFirstChar(data.name),
-        image: data.sprites.front_default,
-        types
+        name: upperFirstChar(data.name), // Pikachu
+        image: data.sprites.front_default, // Img
+        types // ["Electric", "Flying"]
     }
 }
 
@@ -25,9 +25,8 @@ async function getData(input) {
 function addCard(data) {
     const searchBox = document.getElementById("search");
     const cards = document.getElementById("slots");
-    const card = [...cards.children].find(card => card.classList.contains("empty"));
+    const card = [...cards.children].find(card => card.classList.contains("empty")); // Find first empty card
     if (card) {
-        card.innerHTML = "";
         const cardId = card.id.split("card-")[1];
 
         const name = document.createElement("h2");
@@ -94,7 +93,7 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
     searchBox.classList.remove("error");
     const formData = new FormData(form);
-    const search = formData.get("search").toLowerCase();
+    const search = formData.get("search").toLowerCase(); // pikachu
     const data = await getData(search);
 
     if (data != null) {
