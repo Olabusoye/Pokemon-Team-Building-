@@ -28,8 +28,12 @@ const colours = {
  * @returns {Promise<{name: string, image: string, types: string[]}>}
  */
 async function getData(input) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
-    const data = await response.json();
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`).catch(err => console.log("Error getting data."));
+    if (!response.ok) {
+        console.log("Search item not found.");
+        return null;
+    }
+    const data = await response.json().catch(err => console.log("Could not get JSON."));
 
     const types = [];
     data.types.forEach(type => types.push(upperFirstChar(type.type.name)));
@@ -111,8 +115,10 @@ const form = document.getElementById("search-form");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    const search = formData.get("search");
+    const search = formData.get("search").toLowerCase();
     const data = await getData(search);
 
-    addCard(data);
+    if (data) {
+        addCard(data);
+    }
 });
