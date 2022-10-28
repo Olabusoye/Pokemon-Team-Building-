@@ -41,27 +41,15 @@ async function getData(input) {
 }
 
 /**
- * @param {string} input
- * @returns {string}
+ * @param {{name: string, image: string, types: string[]}} data
  */
-function upperFirstChar(input) {
-    return input.charAt(0).toUpperCase() + input.slice(1);
-}
-
-const form = document.getElementById("search-form");
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+function addCard(data) {
     const searchBox = document.getElementById("search");
-    const formData = new FormData(form);
-    const search = formData.get("search");
-
-    const data = await getData(search);
-    console.log(data);
-
     const cards = document.getElementById("slots");
     const card = [...cards.children].find(card => card.classList.contains("empty"));
     if (card) {
         card.innerHTML = "";
+        const cardId = card.id.split("card-")[1];
 
         const name = document.createElement("h2");
         name.classList.add("name");
@@ -74,8 +62,8 @@ form.addEventListener("submit", async (e) => {
         image.src = data.image;
         imageContainer.append(image);
 
-        const infoContainer = document.createElement("info");
-        infoContainer.classList.add("info");
+        const infoContainer = document.createElement("div");
+        infoContainer.classList.add("info-container");
         const typeElements = [];
         data.types.forEach(type => {
             const span = document.createElement("span");
@@ -85,9 +73,43 @@ form.addEventListener("submit", async (e) => {
         });
         typeElements.forEach(typeElement => infoContainer.append(typeElement));
 
-        card.append(name, imageContainer, infoContainer);
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("button-container");
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete");
+        deleteButton.innerText = "Delete";
+        deleteButton.addEventListener("click", () => deleteCard(cardId));
+        buttonContainer.append(deleteButton);
+
+        card.append(name, imageContainer, infoContainer, buttonContainer);
         card.classList.remove("empty");
 
         searchBox.value = "";
     }
+}
+
+function deleteCard(cardId) {
+    const card = document.getElementById(`card-${cardId}`);
+    if (card) {
+        card.innerHTML = "";
+        card.classList.add("empty");
+    }
+}
+
+/**
+ * @param {string} input
+ * @returns {string}
+ */
+function upperFirstChar(input) {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+}
+
+const form = document.getElementById("search-form");
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const search = formData.get("search");
+    const data = await getData(search);
+
+    addCard(data);
 });
