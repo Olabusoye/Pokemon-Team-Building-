@@ -14,7 +14,7 @@ const colours = {
     Grass: "green",
     Ground: "gold",
     Ice: "lightblue",
-    Normal: "beige",
+    Normal: "white",
     Poison: "purple",
     Psychic: "pink",
     Rock: "brown",

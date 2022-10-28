@@ -6,12 +6,11 @@
 body {
     font-family: 'Pokemon Solid', sans-serif;
     text-align: center;
-    background-color: #ffcb05 ;
+    background-color: #ffcb05;
 }
 
-header{
-    margin-bottom: 20px;
-    margin-top: 10px;
+header {
+    margin: 10px;
 }
 
 .header img {
@@ -20,11 +19,7 @@ header{
 }
 
 header h1 {
-    position: relative;
-    top: 18px;
-    left: 10px;
     color: #3c5aa6;
-    
 }
 
 header p {
@@ -36,7 +31,7 @@ header p {
 .pokemon-list {
     background-color: #3c5aa6;
     border: 1px solid black;
-    padding: 1.50em 1em 1em;
+    padding: 25px;
     border-radius: 25px;
     width: 580px;
     height: 520px;
@@ -44,26 +39,12 @@ header p {
     transition: 0.3s;
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 0px 0px;
-    row-gap: -30px;
+    column-gap: 30px;
+    row-gap: 30px;
 }
 
 .pokemon-list:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-section h1 {
-    text-align: left;
-    padding-left: 170px;
-    overflow: hidden;
-    position: relative;
-    padding-top: px;
-    z-index: 1;
-}
-
-#search-container {
-    display: flex;
-    justify-content: center;
 }
 
 .search {
@@ -74,10 +55,6 @@ section h1 {
     padding: 5px;
 }
 
-input {
-    height: 100%;
-}
-
 button {
     width: 30px;
     height: 100%;
@@ -86,18 +63,10 @@ button {
     background: url('https://api.iconify.design/mdi/pokeball.svg?color=red') no-repeat center center / contain;
 }
 
-button:hover{
-    background: url('https://api.iconify.design/mdi/pokeball.svg?color=blue') no-repeat center center / contain;
-}
-
-
-ul li{
-
+ul li {
     width: 160px;
     height: 240px;
     background-color: rgb(246, 246, 163);
-    margin-top: 15px;
-    margin-left: 25px;
     list-style: none;
     
 }
@@ -139,10 +108,6 @@ ul li{
     border-radius: 10px;
 }
 
-header img{
-    
-}
-
 .yellow {
     background-color: yellow;
 }
@@ -170,7 +135,7 @@ header img{
 .gold {
     background-color: gold;
 }
-.beige{
+.white {
     background-color: white;
 }
 .grey {
