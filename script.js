@@ -45,6 +45,7 @@ function addCard(data) {
         infoContainer.classList.add("info-container");
         const typeElements = [];
         card.classList.add(data.types[0].toLowerCase());
+        name.classList.add(data.types[0].toLowerCase());
         data.types.forEach(type => {
             const span = document.createElement("span");
             span.classList.add(type.toLowerCase());
@@ -89,12 +90,16 @@ function upperFirstChar(input) {
 
 const form = document.getElementById("search-form");
 form.addEventListener("submit", async (e) => {
+    const searchBox = document.getElementById("search");
     e.preventDefault();
+    searchBox.classList.remove("error");
     const formData = new FormData(form);
     const search = formData.get("search").toLowerCase();
     const data = await getData(search);
 
-    if (data) {
+    if (data != null) {
         addCard(data);
+    } else {
+        searchBox.classList.add("error");
     }
 });

@@ -18,8 +18,9 @@ header {
     margin-bottom: -20px;
 }
 
-header h1 {
+.header h1 {
     color: #3c5aa6;
+    font-size: 30px;
 }
 
 header p {
@@ -31,12 +32,15 @@ header p {
 .pokemon-list {
     background-color: #3c5aa6;
     border: 1px solid black;
-    padding: 25px;
     border-radius: 25px;
+    width: 75%;
+    padding: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fill, 185px);
+    justify-content: center;
+    align-items: center;
     column-gap: 30px;
     row-gap: 30px;
 }
@@ -45,34 +49,53 @@ header p {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+#search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .search {
     font-family: 'Pokemon Solid', sans-serif;
     background-color: #3c5aa6;
     border: none;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 25px;
+    font-size: 15px;
+    width: 150px;
+    height: 20px;
+    padding: 10px;
+    transition: width 0.25s;
 }
 
-button {
+.error {
+    border: 2px solid red;
+    padding: 8px;
+    animation: shake 2.0s;
+}
+
+.search:focus {
+    width: 175px;
+    height: 20px;
+}
+
+.search-button {
     width: 30px;
     height: 30px;
+    margin-left: 5px;
     border-radius: 20px;
-    margin-bottom: 5px;
     cursor: pointer;
     background: url('https://api.iconify.design/mdi/pokeball.svg?color=red') no-repeat center center / contain;
 } 
 
-button:hover{
-    background: url('https://api.iconify.design/gg/pokemon.svg?color=blue') no-repeat center center / contain; ;
+.search-button:hover{
+    background: url('https://api.iconify.design/gg/pokemon.svg?color=blue') no-repeat center center / contain;
 }
 
-ul li {
-    width: 150px;
+.card {
+    width: 185px;
     height: 285px;
     background-color: rgb(246, 246, 163);
-    list-style: none;
-    transform-style: preserve-3d;
-    transition: all 0.7s ease;
+    border-radius: 15px;
 }
 
 .image {
@@ -93,16 +116,11 @@ ul li {
     align-items: center;
 }
 
-.card {
-    border-radius: 10px;
-}
-
 .name {
-    background-color: orange;
     font-size: 22px;
     text-align: center;
     border-radius: 10px;
-    margin: 10px;
+    margin: 10px 30px;
     padding: 5px;
 }
 
@@ -124,7 +142,7 @@ ul li {
     color: white;
     background-color: red;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
     width: 75%;
     height: auto;
@@ -135,62 +153,111 @@ ul li {
     opacity: 0.75;
 }
 
-/*Flip Card Feature*/
-
-
 #poke1 {
+    position: static;
     float: left;
     height: 150px;
     width: 160px;
 }
 
 #poke2 {
+    position: static;
     float: right;
     height: 150px;
     width: 160px;
 }
 
-.yellow {
-    background-color: yellow;
-}
-.lightblue {
-    background-color: lightblue;
-}
-.blue {
-    background-color: blue;
-}
-.purple {
-    background-color: purple;
-}
-.brown {
-    background-color: brown;
-}
-.pink {
-    background-color: pink;
-}
-.orange {
-    background-color: orange;
-}
-.green {
-    background-color: green;
-}
-.gold {
-    background-color: gold;
-}
-.white {
-    background-color: white;
-}
-.grey {
-    background-color: grey;
+footer p {
+    padding: 10px;
 }
 
 
-@media (min-width: 481px) and (max-width: 1024px){
-
+.card:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
 
-@media (max-width: 480px){
-    .pokemon-list{
-        grid-auto-flow: column;
-    }
+.empty:hover {
+    animation: none;
+}
+
+@keyframes shake {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(5deg); }
+        50% { transform: rotate(0eg); }
+        75% { transform: rotate(-5deg); }
+        100% { transform: rotate(0deg); }
+}
+
+
+.bug {
+    background-image: linear-gradient(to bottom right, yellowgreen, #739a26);
+}
+
+.dark {
+    background-image: linear-gradient(to bottom right, dimgrey, #838383);
+}
+
+.dragon {
+    background-image: linear-gradient(to bottom right, mediumpurple, #6f50a1);
+}
+
+.electric {
+    background-image: linear-gradient(to bottom right, yellow, #c4c401);
+}
+
+.fairy {
+    background-image: linear-gradient(to bottom right, pink, #ad828e);
+}
+
+.fighting {
+    background-image: linear-gradient(to bottom right, brown, #6c1b1b);
+}
+
+.fire {
+    background-image: linear-gradient(to bottom right, orangered, #b03200);
+}
+
+.flying {
+    background-image: linear-gradient(to bottom right, #a587d2, #8072ab);
+}
+
+.ghost {
+    background-image: linear-gradient(to bottom right, #7d5db6, #664993);
+}
+
+.grass {
+    background-image: linear-gradient(to bottom right, lawngreen, #499800);
+}
+
+.ground {
+    background-image: linear-gradient(to bottom right, goldenrod, #9b7910);
+}
+
+.ice {
+    background-image: linear-gradient(to bottom right, lightblue, #739096);
+}
+
+.normal {
+    background-image: linear-gradient(to bottom right, palegoldenrod, #a29c73);
+}
+
+.poison {
+    background-image: linear-gradient(to bottom right, #7d5bc7, #63358d);
+}
+
+.psychic {
+    background-image: linear-gradient(to bottom right, deeppink, #910a53);
+}
+
+.rock {
+    background-image: linear-gradient(to bottom right, darkgoldenrod, #7c5805);
+}
+
+.steel {
+    background-image: linear-gradient(to bottom right, silver, #707070);
+}
+
+.water {
+    background-image: linear-gradient(to bottom right, deepskyblue, #0083c2);
 }
