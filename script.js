@@ -88,6 +88,9 @@ function addCard(data) {
     }
 }
 
+/**
+ * @param {string} cardId
+ */
 function deleteCard(cardId) {
     const card = document.getElementById(`card-${cardId}`);
     if (card) {
