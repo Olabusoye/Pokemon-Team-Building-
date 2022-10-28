@@ -1,29 +1,4 @@
 /**
- * @type {{string}}
- */
-const colours = {
-    Bug: "yellow",
-    Dark: "brown",
-    Dragon: "purple",
-    Electric: "yellow",
-    Fairy: "pink",
-    Fighting: "brown",
-    Fire: "orange",
-    Flying: "purple",
-    Ghost: "purple",
-    Grass: "green",
-    Ground: "gold",
-    Ice: "lightblue",
-    Normal: "white",
-    Poison: "purple",
-    Psychic: "pink",
-    Rock: "brown",
-    Shadow: "purple",
-    Steel: "grey",
-    Water: "lightblue"
-}
-
-/**
  * @param {string} input
  * @returns {Promise<{name: string, image: string, types: string[]}>}
  */
@@ -69,9 +44,10 @@ function addCard(data) {
         const infoContainer = document.createElement("div");
         infoContainer.classList.add("info-container");
         const typeElements = [];
+        card.classList.add(data.types[0].toLowerCase());
         data.types.forEach(type => {
             const span = document.createElement("span");
-            span.classList.add(colours[type]);
+            span.classList.add(type.toLowerCase());
             span.innerText = type;
             typeElements.push(span);
         });
@@ -99,7 +75,7 @@ function deleteCard(cardId) {
     const card = document.getElementById(`card-${cardId}`);
     if (card) {
         card.innerHTML = "";
-        card.classList.add("empty");
+        card.className = "card empty";
     }
 }
 
