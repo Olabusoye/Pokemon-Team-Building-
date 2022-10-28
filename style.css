@@ -33,8 +33,6 @@ header p {
     border: 1px solid black;
     padding: 25px;
     border-radius: 25px;
-    width: 580px;
-    height: 520px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     display: grid;
@@ -57,18 +55,24 @@ header p {
 
 button {
     width: 30px;
-    height: 100%;
-    border:none;
+    height: 30px;
+    border-radius: 20px;
+    margin-bottom: 5px;
     cursor: pointer;
     background: url('https://api.iconify.design/mdi/pokeball.svg?color=red') no-repeat center center / contain;
+} 
+
+button:hover{
+    background: url('https://api.iconify.design/gg/pokemon.svg?color=blue') no-repeat center center / contain; ;
 }
 
 ul li {
-    width: 160px;
-    height: 240px;
+    width: 150px;
+    height: 285px;
     background-color: rgb(246, 246, 163);
     list-style: none;
-    
+    transform-style: preserve-3d;
+    transition: all 0.7s ease;
 }
 
 .image {
@@ -102,10 +106,48 @@ ul li {
     padding: 5px;
 }
 
-.info span {
+.info-container {
+    margin: 5px;
+}
+
+.info-container span {
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
+}
+
+.button-container {
+    margin: 15px;
+}
+
+.delete {
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 75%;
+    height: auto;
+    cursor: pointer;
+}
+
+.delete:hover {
+    opacity: 0.75;
+}
+
+/*Flip Card Feature*/
+
+
+#poke1 {
+    float: left;
+    height: 150px;
+    width: 160px;
+}
+
+#poke2 {
+    float: right;
+    height: 150px;
+    width: 160px;
 }
 
 .yellow {
@@ -140,4 +182,15 @@ ul li {
 }
 .grey {
     background-color: grey;
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px){
+
+}
+
+@media (max-width: 480px){
+    .pokemon-list{
+        grid-auto-flow: column;
+    }
 }

@@ -14,17 +14,17 @@
       <header>
         <div class="header">
           <h1>
-            <img
+            <img 
               src="https://1000logos.net/wp-content/uploads/2017/05/Pokemon-Logo.png"
               alt="pokemon logo"
             />
             Team Planner
           </h1>
-          <img
+          <img id="poke1"
             src="https://www.pngplay.com/wp-content/uploads/10/Dialga-Pokemon-No-Background.png"
             alt="Dialga"
           />
-          <img
+          <img id ="poke2"
             src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/484.png"
             alt="Palkia"
           />
@@ -38,18 +38,29 @@
             class="search"
             placeholder="Search for pokemon..."
           />
-          <button type="submit"><i id="search-icon"></i></button>
+          <button type="submit"><i id="search-icon"></i></button> 
         </form>
       </header>
       <h1>Team Pick</h1>
       <section id="team">
         <ul id="slots" class="pokemon-list">
-          <li class="card empty"></li>
-          <li class="card empty"></li>
-          <li class="card empty"></li>
-          <li class="card empty"></li>
-          <li class="card empty"></li>
-          <li class="card empty"></li>
+                  <li id="card-1" class="card empty">
+                    <div class="flip-card-3D-wrapper">
+                        <div class="flip-card">
+                            <div class="flip-front"><button class="front-btn"></button></div>
+                            <div class="flip-back"><button class="back-btn"></button></div>
+                        </div>
+                    </div>
+                  </li>
+                  <li id="card-2" class="card empty"></li>
+                  <li id="card-3" class="card empty"></li>
+                  <li id="card-4" class="card empty"></li>
+                  <li id="card-5" class="card empty"></li>
+                  <li id="card-6" class="card empty"></li>
+                </div>
+              </div>
+            </div>
+          </div>
         </ul>
       </section>
     </div>
